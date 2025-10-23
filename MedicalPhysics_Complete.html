@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Medical Physics Areas</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Intro section */
+        .intro {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .intro h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Areas grid */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .area-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: #667eea;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-header h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            flex: 1;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-left: 1rem;
+        }
+
+        .area-card p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .learn-more {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .learn-more:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Detailed info section */
+        .detailed-info {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            min-height: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .info-content h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .info-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem 1rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .area-card {
+                margin: 0.5rem 0;
+            }
+            
+            main {
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* Animation for card selection */
+        .area-card.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            transform: scale(1.02);
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Favorite Medical Physics Areas</h1>
+        <p class="subtitle">Exploring the fascinating world of medical physics and its applications</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>What is Medical Physics?</h2>
+            <p>Medical Physics is a branch of applied physics that uses physics principles and methods in medicine and healthcare. It plays a crucial role in diagnosis, treatment, and research in modern medicine.</p>
+        </section>
+
+        <section class="areas-grid">
+            <div class="area-card" data-area="radiotherapy">
+                <div class="card-header">
+                    <h3>Radiotherapy</h3>
+                    <span class="icon">⚡</span>
+                </div>
+                <p>Uses high-energy radiation to treat cancer by destroying cancer cells while minimizing damage to healthy tissue.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="area-card" data-area="diagnostic-radiology">
+                <div class="card-header">
+                    <h3>Diagnostic & Interventional Radiology</h3>
+                    <span class="icon">📷</span>
+                </div>
+                <p>Uses imaging techniques like X-rays, CT scans, and MRI to diagnose diseases and guide minimally invasive procedures.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="area-card" data-area="nuclear-medicine">
+                <div class="card-header">
+                    <h3>Nuclear Medicine</h3>
+                    <span class="icon">☢️</span>
+                </div>
+                <p>Uses radioactive substances to diagnose and treat diseases, providing functional information about organs and tissues.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="area-card" data-area="radiation-protection">
+                <div class="card-header">
+                    <h3>Radiation Protection</h3>
+                    <span class="icon">🛡️</span>
+                </div>
+                <p>Ensures safe use of radiation in medical applications, protecting patients, staff, and the public from unnecessary exposure.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="area-card" data-area="imaging">
+                <div class="card-header">
+                    <h3>Medical Imaging</h3>
+                    <span class="icon">🔬</span>
+                </div>
+                <p>Advanced imaging technologies including MRI, CT, ultrasound, and PET scans for comprehensive medical diagnosis.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="area-card" data-area="laser-therapy">
+                <div class="card-header">
+                    <h3>Laser Therapy</h3>
+                    <span class="icon">💡</span>
+                </div>
+                <p>Uses focused light energy for various medical treatments including surgery, dermatology, and ophthalmology.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+
+            <div class="area-card" data-area="dosimetry">
+                <div class="card-header">
+                    <h3>Dosimetry</h3>
+                    <span class="icon">📊</span>
+                </div>
+                <p>Measurement and calculation of radiation doses to ensure accurate and safe radiation therapy treatments.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+        </section>
+
+        <section class="detailed-info" id="detailed-info">
+            <div class="info-content">
+                <h2 id="info-title">Select an area to learn more</h2>
+                <p id="info-description">Click on any of the medical physics areas above to see detailed information.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Medical Physics Exploration. Built with HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script>
+        // Medical Physics Areas Data
+        const medicalPhysicsData = {
+            'radiotherapy': {
+                title: 'Radiotherapy',
+                description: 'Radiotherapy is a medical specialty that uses high-energy radiation to treat cancer and other diseases. It works by damaging the DNA of cancer cells, preventing them from growing and dividing. Modern radiotherapy techniques include intensity-modulated radiation therapy (IMRT), stereotactic radiosurgery, and proton therapy.',
+                applications: [
+                    'Cancer treatment',
+                    'Palliative care',
+                    'Benign tumor treatment',
+                    'Pain management'
+                ],
+                technologies: [
+                    'Linear accelerators',
+                    'CyberKnife',
+                    'Gamma Knife',
+                    'Proton therapy'
+                ]
+            },
+            'diagnostic-radiology': {
+                title: 'Diagnostic & Interventional Radiology',
+                description: 'This field combines diagnostic imaging with minimally invasive procedures. It uses various imaging modalities to visualize internal structures and guide therapeutic interventions without major surgery.',
+                applications: [
+                    'Disease diagnosis',
+                    'Image-guided surgery',
+                    'Angioplasty',
+                    'Biopsy procedures'
+                ],
+                technologies: [
+                    'X-ray machines',
+                    'CT scanners',
+                    'MRI systems',
+                    'Ultrasound'
+                ]
+            },
+            'nuclear-medicine': {
+                title: 'Nuclear Medicine',
+                description: 'Nuclear medicine uses radioactive substances (radiopharmaceuticals) to diagnose and treat diseases. It provides functional information about organs and tissues, often detecting diseases before they become apparent through other imaging methods.',
+                applications: [
+                    'Cancer detection',
+                    'Heart disease diagnosis',
+                    'Bone scanning',
+                    'Thyroid treatment'
+                ],
+                technologies: [
+                    'PET scanners',
+                    'SPECT cameras',
+                    'Gamma cameras',
+                    'Radiopharmaceuticals'
+                ]
+            },
+            'radiation-protection': {
+                title: 'Radiation Protection',
+                description: 'Radiation protection ensures the safe use of radiation in medical applications. It involves monitoring, controlling, and minimizing radiation exposure to patients, staff, and the public while maintaining the benefits of medical radiation.',
+                applications: [
+                    'Dose monitoring',
+                    'Safety protocols',
+                    'Equipment calibration',
+                    'Risk assessment'
+                ],
+                technologies: [
+                    'Dosimeters',
+                    'Lead shielding',
+                    'Radiation detectors',
+                    'Safety systems'
+                ]
+            },
+            'imaging': {
+                title: 'Medical Imaging',
+                description: 'Medical imaging encompasses all techniques used to create visual representations of the interior of the body for clinical analysis and medical intervention. It includes both anatomical and functional imaging methods.',
+                applications: [
+                    'Disease diagnosis',
+                    'Treatment planning',
+                    'Monitoring therapy',
+                    'Research applications'
+                ],
+                technologies: [
+                    'MRI scanners',
+                    'CT machines',
+                    'Ultrasound systems',
+                    'Digital radiography'
+                ]
+            },
+            'laser-therapy': {
+                title: 'Laser Therapy',
+                description: 'Laser therapy uses focused light energy for various medical treatments. Different types of lasers are used for different applications, from precise surgical procedures to therapeutic treatments.',
+                applications: [
+                    'Laser surgery',
+                    'Dermatology treatments',
+                    'Ophthalmology',
+                    'Physical therapy'
+                ],
+                technologies: [
+                    'CO2 lasers',
+                    'Diode lasers',
+                    'Nd:YAG lasers',
+                    'Excimer lasers'
+                ]
+            },
+            'dosimetry': {
+                title: 'Dosimetry',
+                description: 'Dosimetry is the measurement and calculation of radiation doses. It ensures that radiation therapy treatments are delivered accurately and safely, with precise dose calculations for optimal patient outcomes.',
+                applications: [
+                    'Treatment planning',
+                    'Dose verification',
+                    'Quality assurance',
+                    'Patient safety'
+                ],
+                technologies: [
+                    'Treatment planning systems',
+                    'Dosimeters',
+                    'Monte Carlo simulations',
+                    'Phantom measurements'
+                ]
+            }
+        };
+
+        // DOM elements
+        const areaCards = document.querySelectorAll('.area-card');
+        const infoTitle = document.getElementById('info-title');
+        const infoDescription = document.getElementById('info-description');
+        const detailedInfo = document.getElementById('detailed-info');
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to all area cards
+            areaCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const area = this.getAttribute('data-area');
+                    showDetailedInfo(area);
+                    
+                    // Remove selected class from all cards
+                    areaCards.forEach(c => c.classList.remove('selected'));
+                    // Add selected class to clicked card
+                    this.classList.add('selected');
+                });
+            });
+
+            // Add hover effects
+            areaCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('selected')) {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            });
+        });
+
+        // Function to show detailed information
+        function showDetailedInfo(area) {
+            const data = medicalPhysicsData[area];
+            if (!data) return;
+
+            // Update the detailed info section
+            infoTitle.textContent = data.title;
+            
+            let content = `
+                <p><strong>Description:</strong> ${data.description}</p>
+                <br>
+                <p><strong>Key Applications:</strong></p>
+                <ul>
+                    ${data.applications.map(app => `<li>${app}</li>`).join('')}
+                </ul>
+                <br>
+                <p><strong>Technologies Used:</strong></p>
+                <ul>
+                    ${data.technologies.map(tech => `<li>${tech}</li>`).join('')}
+                </ul>
+            `;
+            
+            infoDescription.innerHTML = content;
+            
+            // Add smooth transition effect
+            detailedInfo.style.opacity = '0';
+            setTimeout(() => {
+                detailedInfo.style.opacity = '1';
+            }, 150);
+        }
+
+        // Add some interactive animations
+        function addParticleEffect() {
+            // Create floating particles effect
+            for (let i = 0; i < 20; i++) {
+                createParticle();
+            }
+        }
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = 'rgba(102, 126, 234, 0.6)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1';
+            
+            // Random position
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            
+            document.body.appendChild(particle);
+            
+            // Animate particle
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 1 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => {
+                particle.remove();
+            };
+        }
+
+        // Add particle effect on page load
+        window.addEventListener('load', function() {
+            setInterval(addParticleEffect, 5000);
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Clear selection
+                areaCards.forEach(card => card.classList.remove('selected'));
+                infoTitle.textContent = 'Select an area to learn more';
+                infoDescription.textContent = 'Click on any of the medical physics areas above to see detailed information.';
+            }
+        });
+
+        // Add touch support for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartY - touchEndY;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe up - could add functionality here
+                    console.log('Swipe up detected');
+                } else {
+                    // Swipe down - could add functionality here
+                    console.log('Swipe down detected');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
