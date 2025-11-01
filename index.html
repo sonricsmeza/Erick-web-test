@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Career Paths Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Career Paths Comparison</h1>
+            <p class="subtitle">Exploring Data Analyst, Data Scientist, and AI Scientist Roles</p>
+        </header>
+
+        <div class="careers-grid">
+            <!-- Data Analyst Card -->
+            <div class="career-card" data-career="analyst">
+                <div class="card-header analyst-header">
+                    <h2>Data Analyst</h2>
+                    <span class="emoji">📊</span>
+                </div>
+                <div class="card-content">
+                    <h3>What They Do</h3>
+                    <p>Transform raw data into actionable insights to support business decisions. Focus on analyzing past and present data trends.</p>
+                    
+                    <h3>How They Do It</h3>
+                    <ul>
+                        <li>Collect and clean data from various sources</li>
+                        <li>Create visualizations and dashboards</li>
+                        <li>Perform statistical analysis</li>
+                        <li>Write SQL queries to extract insights</li>
+                        <li>Present findings to stakeholders</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Data Scientist Card -->
+            <div class="career-card" data-career="scientist">
+                <div class="card-header scientist-header">
+                    <h2>Data Scientist</h2>
+                    <span class="emoji">🔬</span>
+                </div>
+                <div class="card-content">
+                    <h3>What They Do</h3>
+                    <p>Build predictive models and advanced analytics solutions. Combine statistics, machine learning, and domain expertise.</p>
+                    
+                    <h3>How They Do It</h3>
+                    <ul>
+                        <li>Develop machine learning models</li>
+                        <li>Perform statistical modeling</li>
+                        <li>Feature engineering and selection</li>
+                        <li>Train and validate predictive models</li>
+                        <li>Deploy models to production</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AI Scientist Card -->
+            <div class="career-card" data-career="ai">
+                <div class="card-header ai-header">
+                    <h2>AI Scientist</h2>
+                    <span class="emoji">🤖</span>
+                </div>
+                <div class="card-content">
+                    <h3>What They Do</h3>
+                    <p>Research and develop cutting-edge AI systems. Push boundaries of machine learning and artificial intelligence.</p>
+                    
+                    <h3>How They Do It</h3>
+                    <ul>
+                        <li>Design novel AI algorithms</li>
+                        <li>Conduct research experiments</li>
+                        <li>Work with deep learning architectures</li>
+                        <li>Publish research papers</li>
+                        <li>Optimize AI performance at scale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-section">
+            <h2>Side-by-Side Comparison</h2>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Data Analyst</th>
+                            <th>Data Scientist</th>
+                            <th>AI Scientist</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Focus</strong></td>
+                            <td>Business insights</td>
+                            <td>Predictive analytics</td>
+                            <td>AI research</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Skills</strong></td>
+                            <td>SQL, Excel, BI tools</td>
+                            <td>Python, ML, Statistics</td>
+                            <td>Deep Learning, Research</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time Horizon</strong></td>
+                            <td>Past & Present</td>
+                            <td>Near Future</td>
+                            <td>Long-term innovation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Output</strong></td>
+                            <td>Reports & Dashboards</td>
+                            <td>ML Models</td>
+                            <td>Research & Algorithms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Complexity Level</strong></td>
+                            <td>Intermediate</td>
+                            <td>Advanced</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Industry Focus</strong></td>
+                            <td>Business-oriented</td>
+                            <td>Product & Business</td>
+                            <td>Research & Innovation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- How They Complement Section -->
+        <div class="complement-section">
+            <h2>How They Work Together</h2>
+            <div class="complement-grid">
+                <div class="complement-card analyst-color">
+                    <h3>📊 Data Analysts</h3>
+                    <p>Provide foundational insights and data quality checks that inform modeling decisions</p>
+                </div>
+                <div class="complement-card scientist-color">
+                    <h3>🔬 Data Scientists</h3>
+                    <p>Bridge business needs with technical solutions, implementing models for real-world impact</p>
+                </div>
+                <div class="complement-card ai-color">
+                    <h3>🤖 AI Scientists</h3>
+                    <p>Develop next-generation capabilities that enhance predictive power and capabilities</p>
+                </div>
+            </div>
+            <div class="complement-flow">
+                <p class="flow-text">
+                    Together, they form a powerful pipeline: <span class="analyst-span">Analysts</span> 
+                    → <span class="scientist-span">Scientists</span> 
+                    → <span class="ai-span">AI Scientists</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Interactive Element -->
+        <div class="interactive-section">
+            <button id="highlightBtn" class="highlight-btn">Highlight Differences</button>
+            <p class="hint-text">Click to see key differences highlighted</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Choose the path that matches your interests and skills!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
