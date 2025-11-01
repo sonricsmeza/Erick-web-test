@@ -1,36 +1,26 @@
-# Medical Physics Web Project 🏥⚡
+# Data Career Paths Comparison 📊🔬🤖
 
-A beautiful, interactive webpage showcasing different areas of Medical Physics. Built with pure HTML, CSS, and JavaScript.
+A beautiful, interactive webpage comparing three exciting data career paths. Built with pure HTML, CSS, and JavaScript.
 
 ## 🌟 Features
 
-- **Interactive Cards** - Click on any medical physics area to learn more
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
-- **Beautiful Animations** - Smooth hover effects and transitions
-- **Educational Content** - Detailed information about 7 key medical physics areas
-- **Single File Option** - Complete webpage in one HTML file
+- **Interactive Cards** - Explore different career paths
+- **Comparison Table** - Side-by-side comparison of roles
+- **Modern Design** - Beautiful color-coded visualizations
+- **Responsive Layout** - Works perfectly on desktop, tablet, and mobile
+- **Interactive Elements** - Click to highlight key differences
 
-## 🎯 Medical Physics Areas Covered
+## 🎯 Career Paths Covered
 
-- ⚡ **Radiotherapy** - Cancer treatment with radiation
-- 📷 **Diagnostic & Interventional Radiology** - Medical imaging and procedures
-- ☢️ **Nuclear Medicine** - Radioactive substances for diagnosis/treatment
-- 🛡️ **Radiation Protection** - Safety protocols and monitoring
-- 🔬 **Medical Imaging** - Advanced imaging technologies
-- 💡 **Laser Therapy** - Light-based medical treatments
-- 📊 **Dosimetry** - Radiation dose measurement and calculation
+- 📊 **Data Analyst** - Transform raw data into actionable business insights
+- 🔬 **Data Scientist** - Build predictive models and advanced analytics
+- 🤖 **AI Scientist** - Research and develop cutting-edge AI systems
 
 ## 🚀 Quick Start
 
-### Option 1: Single File (Recommended)
-1. Download `MedicalPhysics_Complete.html`
-2. Open it in any web browser
-3. Start exploring!
-
-### Option 2: Project Files
 1. Clone this repository
 2. Open `index.html` in your browser
-3. Enjoy the interactive experience
+3. Explore the different career paths!
 
 ## 🛠️ Technologies Used
 
@@ -49,21 +39,20 @@ A beautiful, interactive webpage showcasing different areas of Medical Physics. 
 
 ## 🎨 Design Features
 
-- Glass-morphism effects
-- Gradient backgrounds
-- Smooth animations
-- Touch-friendly interface
-- Keyboard navigation (Press Escape to clear selection)
+- Color-coded sections (Blue, Purple, Green)
+- Smooth hover effects
+- Interactive comparison highlighting
+- Responsive card layouts
+- Modern gradient backgrounds
 
 ## 📁 Project Structure
 
 ```
-MedicalPhysicsHTML/
-├── index.html                    # Main webpage
-├── styles.css                    # CSS styling
-├── script.js                     # JavaScript functionality
-├── MedicalPhysics_Complete.html  # Single file version
-└── README.md                     # This file
+Erick-web-test/
+├── index.html       # Main webpage
+├── styles.css       # CSS styling
+├── script.js        # JavaScript functionality
+└── README.md        # This file
 ```
 
 ## 🤝 Contributing
@@ -76,8 +65,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-Created with ❤️ using Gemini AI
+Created by Erick ✨
 
 ---
 
-**Live Demo:** Open `MedicalPhysics_Complete.html` in your browser to see the magic! ✨
+**Live Demo:** Open `index.html` in your browser to explore the career paths!
